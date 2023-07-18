@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reportar-erro-final</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="reportar-erros-de-maneira-mais-eficaz">Reportar <s>erros</s> de maneira mais <em>eficaz</em></h1>
+<blockquote>
+<p><em>Como fazer perguntas mais eficientes em fóruns, canais e sites sobre os erros encontrados no desenvolvimento dos projetos</em></p>
+</blockquote>
+<h4 id="o-que-uma-boa-pergunta-deve-ter">O que uma boa pergunta deve ter?</h4>
+<ul>
+<li>trecho do código</li>
+<li>mensagem de erro</li>
+<li>captura de tela</li>
+<li>boa comunicação</li>
+</ul>
+<h4 id="e-como-fazer">E como fazer?</h4>
+<ol>
+<li>Encontrar o erro</li>
+<li>Produzir material ilustrativo</li>
+<li>Elaborar a mensagem</li>
+<li>Revisar a mensagem antes de enviar</li>
+</ol>
+<h3 id="primeiro-passo-encontrar-o-erro">Primeiro passo: encontrar o erro</h3>
+<blockquote>
+<p><code>Uncaught TypeError: input.setCustomValidit is not a function</code></p>
+</blockquote>
+<ul>
+<li>O console do navegador é uma boa ferramenta para exibir os erros da aplicação</li>
+<li>Permite copiar o texto exibido ou tirar um <em>print</em> sobre o erro para utilizar na mensagem</li>
+</ul>
+<p><img src="https://github.com/NetoPaiva/publish/blob/main/postagens/imagens/tela-erro-console.png?raw=true" alt="print da tela com o erro no console do naveador"></p>
+<h3 id="segundo-passo-produzir-material-ilustrativo">Segundo passo: produzir material ilustrativo</h3>
+<blockquote>
+<p><em>Uma imagem fala mais que mil palavras?</em></p>
+</blockquote>
+<ul>
+<li>Sempre que possível, capture imagens da tela (fotos / vídeos)</li>
+<li>Demonstre claramente
+<ul>
+<li>detalhes do código</li>
+<li>aplicação no navegador / terminal /compilador</li>
+<li>mensagem de erro</li>
+</ul>
+</li>
+<li>Se achar necessário, faça marcações na imagem realçando pontos chaves do problema</li>
+</ul>
+<p>Nem todos os fóruns de “discussão” permitem fazer upload de imagens, mas podem aceitar links externos.<br>
+Nesses casos, é possível publicar a imagem em alguma plataforma que ofereça este tipo de serviço e copiar o link da imagem para incluir na mensagem do fórum.</p>
+<p>Uma sugestão de serviço gratuito para publicar imagens é o <a href="https://imgur.com/">imgur.com</a> ou o próprio <a href="https://github.com">GitHub</a>, além de serviços de armazenamento em nuvem.</p>
+<h3 id="terceiro-passo-elaborar-a-mensagem">Terceiro passo: elaborar a mensagem</h3>
+<blockquote>
+<p><em>Como escrever o que está acontecendo?</em></p>
+</blockquote>
+<ul>
+<li>utilizar tom cordial, com saudação inicial e pedido de ajuda no final</li>
+<li>formatação Markdown melhora a comunicação</li>
+<li>mensagem com o máximo de informação possível</li>
+<li>3 seções fundamentais da mensagem:
+<ul>
+<li>breve descrição do problema;</li>
+<li>cópia do trecho do código que está dando erro (<code>em formato de código</code>)</li>
+<li>cópia do erro exibido no console do navegador
+<ul>
+<li>texto ou imagem (o que for melhor para a compreensão)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><em>E se a mensagem ficar muito longa?</em></p>
+</blockquote>
+<p>A maioria dos fóruns de discussão limitam a quantidade de caracteres da mensagem.<br>
+O ideal é manter o texto dentro deste limite, mas nem sempre é possível.<br>
+Nesses casos, assim como foi feito com a imagem, uma alternativa seria utilizar um serviço externo para publicar a mensagem e gerar um link de acesso. Por exemplo, o Gist do GitHub (<a href="gist.github.com">gist.github.com</a>) ou o próprio GoogleDocs.<br>
+O Gist tem a vantagem de formatar os códigos com aparência semelhante às IDEs, além de permitir adicionar mais de um arquivo de texto na mesma publicação, melhorando a organização da mensagem.</p>
+<p><strong>Exemplo de mensagem:</strong></p>
+<blockquote>
+<hr>
+<p><em>Olá, tudo bem?</em><br>
+<em>Não estou conseguindo validar o CPF.</em><br>
+<em>Quando abro a aplicação no navegador aparece um erro no console, mas não sei o que é.</em><br>
+<em>Já revisei e o erro continua.</em></p>
+<p><em>O meu código está desta maneira:</em></p>
+<pre><code>function validaCPF(input){
+  const cpfFormatado = input.value.replace(/\D/g, '');
+  let mensagem ='';
+
+  if(!checaCPFRepetido(cpfFormatado)) {
+    mensagem = 'o CPF digitado não é válido.';
+  }
+
+  input.setCustomValidit(mensagem);
+}
+</code></pre>
+<p><em>e no console do navegador aparece esta mensagem de erro em vermelho:</em></p>
+<pre><code> Uncaught TypeError: input.setCustomValidit is not a function  |  validacao.js:110:9
+   validaCPF file:///home/valida-cpf/js/validacao.js:110
+   cpf file:///home/valida-cpf/js/validacao.js:55
+   valida file:///home/valida-cpf/js/validacao.js:7
+   &lt;anonymous&gt; file:///home/valida-cpf/js/validacao.js:142
+</code></pre>
+<p><em>Se puderem me ajudar, não consigo localizar o erro.</em><br>
+<em>Já comparei com o que o professor passou em aula e parece igual, refiz este trecho do código, mas o erro permanece!  /: (</em></p>
+<p><em>Onde está o</em> bug <em>???</em><br>
+<em><strong>Help me!!!</strong></em></p>
+<hr>
+</blockquote>
+<h3 id="quarto-passo-revisar-a-mensagem-antes-de-enviar">Quarto passo: revisar a mensagem antes de enviar</h3>
+<blockquote>
+<p><em>Quase sempre pulamos esta etapa… aí, já viu!</em></p>
+</blockquote>
+<ul>
+<li>É uma etapa importante</li>
+<li>Assegura a melhor compreensão da mensagem</li>
+<li>Reduz a necessidade de edição (<em>quase inevitável</em>)</li>
+<li>Correções e ajustes feitos…</li>
+<li>Estando tudo OK, enviar!</li>
+</ul>
+<hr>
+<h4 id="referência-sobre-edição-markdown">Referência sobre edição Markdown</h4>
+<blockquote>
+<p><em>Uma rápida busca na internet sobre ‘markdown editor online’ retornará uma lista considerável de opções.</em></p>
+</blockquote>
+<ul>
+<li>Testei alguns e o  achei o <a href="https://stackedit.io/">stackedit.io</a> bem interessante. Utilizei para produzir este material e a avaliação até agora é muito positiva.</li>
+<li>É uma aplicação web <em>open source</em>. Possui interface intuitiva e oferece uma série de recursos gratuitos, na verdade, apenas as opções de exportação como PDF, ePub, Doc são exclusivas para apoiadores, tudo mais o acesso é livre.</li>
+<li>Listei algumas funcionalidades que fazem a diferença.</li>
+</ul>
+<blockquote>
+<ul>
+<li>acesso gratuito</li>
+<li>exemplos de códigos de marcação</li>
+<li>editor WYSIWYG</li>
+<li>botoneira de comandos (com <code>undo</code> / <code>redo</code>)</li>
+<li>importa e exporta HTML / MD</li>
+<li>exporta PDF / ePub / Doc (exclusivo para apoiadores)</li>
+<li>login com conta Google / GitHub</li>
+<li>auto save (nuvem / Drive)</li>
+<li>trabalha offline</li>
+<li>histórico de trabalho</li>
+<li>espaço colaborativo</li>
+<li>configurações</li>
+<li>metadados</li>
+<li>templates</li>
+<li>badges</li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<p><em>se gostou deste material, compartilhe!    : )</em><br>
+página no <a href="#">GitHub</a></p>
+</blockquote>
+<hr>
+</div>
+</body>
+
+</html>
