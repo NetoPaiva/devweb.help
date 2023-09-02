@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02 componente menu | reflix</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html">
+    <h3 id="projeto-reflix">Projeto Reflix</h3>
+    <p><mark><em>Anotações do desenvolvimento do projeto com base no Aluraflix</em></mark></p>
+    <p>Link repositório <strong>reflix</strong>: <a
+        href="https://github.com/NetoPaiva/reflix/">https://github.com/NetoPaiva/reflix/</a></p>
+    <h1 id="etapa-02---criar-componentes">Etapa 02 - Criar componentes</h1>
+    <h2 id="estrutura-básica-do-componente-no-projeto">Estrutura básica do componente no projeto</h2>
+    <p><strong>Criar pastas e arquivos referentes aos componentes</strong></p>
+    <ul>
+      <li>dentro da pasta <code>src</code>
+        <ul>
+          <li>criar a pasta <code>components</code></li>
+        </ul>
+      </li>
+      <li>dentro da pasta <code>components</code>
+        <ul>
+          <li>criar a pasta <code>Menu</code></li>
+        </ul>
+      </li>
+      <li>dentro da pasta <code>Menu</code> criar os arquivos
+        <ul>
+          <li><code>index.js</code></li>
+          <li><code>Menu.css</code></li>
+        </ul>
+      </li>
+    </ul>
+    <pre><code>&gt; src
+	&gt; components
+		&gt; Menu
+			- index.js
+			- Menu.css
+</code></pre>
+    <blockquote>
+      <p>Se for desenvolver o projeto com <code>styled-components</code> utilizar estrutura específica, apenas com o
+        <code>index.js</code> na pasta do componente, que conterá tanto o HTML quanto o CSS.
+      </p>
+    </blockquote>
+    <h2 id="estrutura-básica-do-index.js-do-componente">Estrutura básica do <code>index.js</code> do componente</h2>
+    <p><strong>No arquivo <code>Menu/index.js</code></strong></p>
+    <ul>
+      <li>importar a biblioteca <code>React</code></li>
+      <li>importar o arquivo CSS do componente</li>
+      <li>criar a função do componente</li>
+      <li>inlcuir o <code>return</code> da função</li>
+      <li>exportar a função</li>
+    </ul>
+    <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">import</span>  React  <span class="token keyword">from</span>  <span class="token string">"react"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span>  <span class="token string">'./Menu.css'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span>  <span class="token function">Menu</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span><span class="token punctuation">(</span>
+	
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span>  <span class="token keyword">default</span>  Menu<span class="token punctuation">;</span>
+</code></pre>
+    <blockquote>
+      <p>Essa é a estrutura básica de componentes React. Toda a definição <code>HTML</code> do componente será declarada
+        dentro do <code>return</code> da função.</p>
+    </blockquote>
+    <h2 id="estrutura-html-do-componente-menu">Estrutura <code>HTML</code> do componente <code>Menu</code></h2>
+    <p><strong>No arquivo <code>Menu/index.js</code></strong></p>
+    <ul>
+      <li>dentro do <code>return</code> da função <code>Menu</code>
+        <ul>
+          <li>declarar a tag <code>nav</code> com a classe <code>menu</code></li>
+        </ul>
+      </li>
+      <li>a tag <code>nav</code> conterá duas tags de link <code>a</code>
+        <ul>
+          <li>do logo
+            <ul>
+              <li>com direcionamento para a “home” (<code>/</code>)</li>
+              <li>contendo a tag de imagem <code>img</code> com os atributos <code>src</code> e <code>alt</code></li>
+            </ul>
+          </li>
+          <li>do botão “Novo vídeo”
+            <ul>
+              <li>com a classe <code>botao-menu</code></li>
+              <li>com direcionamento provisório para “home” (<code>/</code>)</li>
+              <li>contendo o texto “Novo vídeo”</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <pre class=" language-js"><code class="prism  language-js"><span class="token keyword">return</span> <span class="token punctuation">(</span>
+	<span class="token operator">&lt;</span>nav  className<span class="token operator">=</span><span class="token string">"menu"</span><span class="token operator">&gt;</span>
+		<span class="token operator">&lt;</span>a  href<span class="token operator">=</span><span class="token string">"/"</span><span class="token operator">&gt;</span>
+			<span class="token operator">&lt;</span>img  src<span class="token operator">=</span><span class="token string">""</span>  alt<span class="token operator">=</span><span class="token string">""</span>  <span class="token operator">/</span><span class="token operator">&gt;</span>
+		<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+		<span class="token operator">&lt;</span>a  className<span class="token operator">=</span><span class="token string">"botao-menu"</span>  href<span class="token operator">=</span><span class="token string">"/"</span><span class="token operator">&gt;</span>Novo vídeo<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+	<span class="token operator">&lt;</span><span class="token operator">/</span>nav<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+    <h2 id="incluir-pasta-de-imagens-no-projeto">Incluir pasta de imagens no projeto</h2>
+    <ul>
+      <li>dentro da pasta <code>src</code>
+        <ul>
+          <li>criar a pasta <code>assets</code></li>
+        </ul>
+      </li>
+      <li>dentro de <code>assets</code>
+        <ul>
+          <li>criar a pasta <code>img</code></li>
+        </ul>
+      </li>
+    </ul>
+    <pre><code>&gt; src
+	&gt; assets
+		&gt; img
+</code></pre>
+    <blockquote>
+      <p>A pasta <code>assets</code> guardará todos os recursos adicionais do projeto, como imagens, fontes e outros.
+      </p>
+    </blockquote>
+    <h2 id="criar-logotipo">Criar Logotipo</h2>
+    <ul>
+      <li>site “Font Meme” ( <a
+          href="https://fontmeme.com/pt/fonte-da-netflix/">https://fontmeme.com/pt/fonte-da-netflix/</a> )</li>
+      <li>gerar imagem com:
+        <ul>
+          <li>tamanho 120px</li>
+          <li>cor #2A7AE4</li>
+        </ul>
+      </li>
+      <li>exportar e salvar imagem na pasta de imagens
+        <ul>
+          <li><code>src/assets/img/devflix-logo.png</code></li>
+        </ul>
+      </li>
+    </ul>
+    <h2 id="importar-imagem-do-logo">Importar imagem do logo</h2>
+    <p><strong>No arquivo <code>Menu/index.js</code></strong></p>
+    <ul>
+      <li>abaixo da linha de importação do <code>Menu.css</code></li>
+      <li>importar a propriedade <code>Logo</code> indicando o caminho do arquivo</li>
+      <li>na tag <code>img</code> definir os valores dos atributos:
+        <ul>
+          <li><code>className</code> com o seletor <code>logo</code></li>
+          <li><code>src</code> com a propriedade <code>Logo</code></li>
+          <li><code>alt</code> com o texto explicativo da imagem</li>
+        </ul>
+      </li>
+    </ul>
+    <pre class=" language-js"><code class="prism  language-js"><span class="token keyword">import</span>  Logo  <span class="token keyword">from</span>  <span class="token string">'../../assets/img/devflix-logo.png'</span><span class="token punctuation">;</span>
+<span class="token operator">...</span>
+<span class="token keyword">return</span> <span class="token punctuation">(</span>
+	<span class="token operator">&lt;</span>nav  className<span class="token operator">=</span><span class="token string">"menu"</span><span class="token operator">&gt;</span>
+		<span class="token operator">&lt;</span>a  href<span class="token operator">=</span><span class="token string">"/"</span><span class="token operator">&gt;</span>
+			<span class="token operator">&lt;</span>img  className<span class="token operator">=</span><span class="token string">"logo"</span>  src<span class="token operator">=</span><span class="token punctuation">{</span>Logo<span class="token punctuation">}</span>  alt<span class="token operator">=</span><span class="token string">"Logotipo Devflix"</span>  <span class="token operator">/</span><span class="token operator">&gt;</span>
+		<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+		<span class="token operator">&lt;</span>a  className<span class="token operator">=</span><span class="token string">"botao-menu"</span>  href<span class="token operator">=</span><span class="token string">"/"</span><span class="token operator">&gt;</span>Novo vídeo<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+	<span class="token operator">&lt;</span><span class="token operator">/</span>nav<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+    <h2 id="definir-estilo-do-componente-menu">Definir estilo do componente <code>Menu</code></h2>
+    <p><strong>No arquivo <code>Menu.css</code></strong></p>
+    <ul>
+      <li>incluir os seletores do compomente com seus atributos e valores
+        <ul>
+          <li><code>body</code></li>
+          <li><code>menu</code></li>
+          <li><code>logo</code></li>
+          <li><code>button-menu</code></li>
+        </ul>
+      </li>
+      <li>incluir os valores responsivos</li>
+    </ul>
+    <p><strong>Código CSS completo do componente <code>Menu</code></strong></p>
+    <pre class=" language-css"><code class="prism  language-css"><span class="token selector">body </span><span class="token punctuation">{</span>
+	<span class="token property">--bodyPaddingTop</span><span class="token punctuation">:</span> <span class="token number">94</span>px<span class="token punctuation">;</span>
+	<span class="token property">padding-top</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--bodyPaddingTop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token class">.menu</span> </span><span class="token punctuation">{</span>
+	<span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+	<span class="token property">justify-content</span><span class="token punctuation">:</span> space-between<span class="token punctuation">;</span>
+	<span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+
+	<span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--black<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token property">border-bottom</span><span class="token punctuation">:</span> <span class="token number">2</span>px  solid  <span class="token function">var</span><span class="token punctuation">(</span>--primary<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span>
+	<span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">94</span>px<span class="token punctuation">;</span>
+	<span class="token property">z-index</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">;</span>
+
+	<span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>
+	<span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token property">right</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+	<span class="token property">padding-left</span><span class="token punctuation">:</span> <span class="token number">5%</span><span class="token punctuation">;</span>
+	<span class="token property">padding-right</span><span class="token punctuation">:</span> <span class="token number">5%</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token class">.logo</span> </span><span class="token punctuation">{</span>
+	<span class="token property">max-width</span><span class="token punctuation">:</span> <span class="token number">168</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token class">.button-menu</span> </span><span class="token punctuation">{</span>
+	<span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+
+	<span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px  solid  <span class="token function">var</span><span class="token punctuation">(</span>--white<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">5</span>px<span class="token punctuation">;</span>
+	<span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+
+	<span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+	<span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+	<span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">16</span>px<span class="token punctuation">;</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--white<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token property">outline</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+	<span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+
+	<span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+
+	<span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">16</span>px  <span class="token number">24</span>px<span class="token punctuation">;</span>
+
+	<span class="token property">transition</span><span class="token punctuation">:</span> opacity  <span class="token number">.3</span>s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector"><span class="token class">.button-menu</span><span class="token pseudo-class">:hover</span>,
+<span class="token class">.button-menu</span><span class="token pseudo-class">:focus</span> </span><span class="token punctuation">{</span>
+	<span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">.5</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@media</span> screen and <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 800px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+
+	<span class="token selector">body </span><span class="token punctuation">{</span>
+		<span class="token property">--bodyPaddingTop</span><span class="token punctuation">:</span> <span class="token number">40</span>px<span class="token punctuation">;</span>
+		<span class="token property">padding-top</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--bodyPaddingTop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token selector"><span class="token class">.menu</span> </span><span class="token punctuation">{</span>
+		<span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">40</span>px<span class="token punctuation">;</span>
+		<span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token selector"><span class="token class">.logo</span> </span><span class="token punctuation">{</span>
+		<span class="token property">max-width</span><span class="token punctuation">:</span> <span class="token number">105</span>px<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token selector">a<span class="token class">.button-menu</span> </span><span class="token punctuation">{</span>
+		<span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>
+		<span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+		<span class="token property">right</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+		<span class="token property">bottom</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+		<span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--primary<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+		<span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+		<span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+    <h2 id="incluir-componente-na-aplicação">Incluir componente na aplicação</h2>
+    <p><strong>No arquivo <code>src/App.js</code></strong></p>
+    <ul>
+      <li>dentro do <code>return</code> da função “App”
+        <ul>
+          <li>incluir a tag <code>&lt;Menu /&gt;</code></li>
+        </ul>
+      </li>
+    </ul>
+    <blockquote>
+      <p>O VSCode faz a importação automática do componente ao declarar a tag <code>Menu</code>. Caso esta ação
+        automática não ocorra, a importação deverá ser feita manualmente, digitando no início do arquivo, abaixo da
+        linha de importação do <code>React</code>:</p>
+      <pre class=" language-js"><code class="prism  language-js"> <span class="token keyword">import</span>  Menu  <span class="token keyword">from</span>  <span class="token string">'./components/Menu'</span><span class="token punctuation">;</span>
+</code></pre>
+    </blockquote>
+    <p><strong>Código do arquivo <code>src/App.js</code></strong></p>
+    <pre class=" language-js"><code class="prism  language-js"><span class="token keyword">import</span>  React  <span class="token keyword">from</span>  <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span>  Menu  <span class="token keyword">from</span>  <span class="token string">'./components/Menu'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span>  <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token punctuation">(</span>
+		<span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+			<span class="token operator">&lt;</span>Menu  <span class="token operator">/</span><span class="token operator">&gt;</span>
+			<span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>Hello<span class="token punctuation">,</span> World<span class="token operator">!</span><span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+		<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span>  <span class="token keyword">default</span>  App<span class="token punctuation">;</span>
+</code></pre>
+    <h3 id="estrutura-atualizada-do-projeto">Estrutura atualizada do projeto</h3>
+    <pre><code>&gt; reflix
+	&gt; node_modules
+	&gt; public
+		- index.html
+		- manifest.json
+		- robots.txt
+	&gt; src
+		&gt; assets
+			&gt; img
+				- devflix-logo.png
+		&gt; components
+			&gt; Menu
+				- index.js
+				- Menu.css
+		- App.js
+		- index.css
+		- index.js
+	- .gitignore
+	- package.json
+	- README.md
+</code></pre>
+    <h2 id="registrar-etapa-do-desenvolvimento-do-projeto">Registrar etapa do desenvolvimento do projeto</h2>
+    <ul>
+      <li>fazer commit</li>
+      <li>enviar para repositório remoto (GitHub)</li>
+    </ul>
+  </div>
+</body>
+
+</html>
