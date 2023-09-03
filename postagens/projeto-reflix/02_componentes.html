@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Etapa 02 - Criar Componentes | Projeto Reflix</title>
+	<style>
+		/* From extension vscode.github */
+		/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+		.vscode-dark img[src$=\#gh-light-mode-only],
+		.vscode-light img[src$=\#gh-dark-mode-only] {
+			display: none;
+		}
+	</style>
+
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+	<style>
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+			font-size: 14px;
+			line-height: 1.6;
+		}
+	</style>
+	<style>
+		.task-list-item {
+			list-style-type: none;
+		}
+
+		.task-list-item-checkbox {
+			margin-left: -20px;
+			vertical-align: middle;
+			pointer-events: none;
+		}
+	</style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+	<h3 id="projeto-reflix">Projeto Reflix</h3>
+	<p><mark><em>Anotações do desenvolvimento do projeto com base no Aluraflix</em></mark></p>
+	<br>
+	<p>Link repositório <strong>reflix</strong>: <a
+			href="https://github.com/NetoPaiva/reflix/">https://github.com/NetoPaiva/reflix/</a></p>
+	<br>
+	<h1 id="etapa-02---criar-componentes">Etapa 02 - Criar componentes</h1>
+	<h2 id="estrutura-básica-do-componente-no-projeto">Estrutura básica do componente no projeto</h2>
+	<p><strong>Criar pastas e arquivos referentes aos componentes</strong></p>
+	<ul>
+		<li>dentro da pasta <code>src</code>
+			<ul>
+				<li>criar a pasta <code>components</code></li>
+			</ul>
+		</li>
+	</ul>
+	<!-- <br> -->
+	<ul>
+		<li>dentro da pasta <code>components</code>
+			<ul>
+				<li>criar a pasta <code>Menu</code></li>
+			</ul>
+		</li>
+	</ul>
+	<!-- <br> -->
+	<ul>
+		<li>dentro da pasta <code>Menu</code> criar os arquivos
+			<ul>
+				<li><code>index.js</code></li>
+				<li><code>Menu.css</code></li>
+			</ul>
+		</li>
+	</ul>
+	<br>
+	<p><strong>Estrutura de pastas do componente</strong></p>
+	<pre><code class="language-bash">&gt; src
+	&gt; components
+		&gt; Menu
+			- index.js
+			- Menu.css
+</code></pre>
+	<br>
+	<blockquote>
+		<p>Se for desenvolver o projeto com <code>styled-components</code> utilizar estrutura específica, apenas com o
+			<code>index.js</code> na pasta do componente, que conterá tanto o HTML quanto o CSS.</p>
+	</blockquote>
+	<br>
+	<h2 id="estrutura-básica-do-indexjs-do-componente">Estrutura básica do <code>index.js</code> do componente</h2>
+	<p><strong>No arquivo <code>Menu/index.js</code></strong></p>
+	<ul>
+		<li>importar a biblioteca <code>React</code></li>
+		<li>importar o arquivo CSS do componente</li>
+		<li>criar a função do componente</li>
+		<li>inlcuir o <code>return</code> da função</li>
+		<li>exportar a função</li>
+	</ul>
+	<pre><code class="language-javascript"><span class="hljs-keyword">import</span>  <span class="hljs-title class_">React</span>  <span class="hljs-keyword">from</span>  <span class="hljs-string">&quot;react&quot;</span>;
+<span class="hljs-keyword">import</span>  <span class="hljs-string">&#x27;./Menu.css&#x27;</span>;
+
+<span class="hljs-keyword">function</span>  <span class="hljs-title function_">Menu</span>(<span class="hljs-params"></span>) {
+	<span class="hljs-keyword">return</span>(
+	
+	);
+}
+<span class="hljs-keyword">export</span>  <span class="hljs-keyword">default</span>  <span class="hljs-title class_">Menu</span>;
+</code></pre>
+	<br>
+	<blockquote>
+		<p>Essa é a estrutura básica de componentes React. Toda a definição <code>HTML</code> do componente será declarada
+			dentro do <code>return</code> da função.</p>
+	</blockquote>
+	<br>
+	<h2 id="estrutura-html-do-componente-menu">Estrutura <code>HTML</code> do componente <code>Menu</code></h2>
+	<p><strong>No arquivo <code>Menu/index.js</code></strong></p>
+	<ul>
+		<li>dentro do <code>return</code> da função <code>Menu</code>
+			<ul>
+				<li>declarar a tag <code>nav</code> com a classe <code>menu</code></li>
+			</ul>
+		</li>
+	</ul>
+	<!-- <br> -->
+	<ul>
+		<li>a tag <code>nav</code> conterá duas tags de link <code>a</code>
+			<ul>
+				<li>do logo
+					<ul>
+						<li>com direcionamento para a &quot;home&quot; (<code>/</code>)</li>
+						<li>contendo a tag de imagem <code>img</code> com os atributos <code>src</code> e <code>alt</code></li>
+					</ul>
+				</li>
+				<li>do botão &quot;Novo vídeo&quot;
+					<ul>
+						<li>com a classe <code>botao-menu</code></li>
+						<li>com direcionamento provisório para &quot;home&quot; (<code>/</code>)</li>
+						<li>contendo o texto &quot;Novo vídeo&quot;</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<!-- <br> -->
+	<pre><code class="language-js"><span class="hljs-keyword">return</span> (
+	<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>  <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;menu&quot;</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">a</span>  <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/&quot;</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">img</span>  <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span>  <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;&quot;</span>  /&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">a</span>  <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;botao-menu&quot;</span>  <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/&quot;</span>&gt;</span>Novo vídeo<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></span>
+);
+</code></pre>
+	<br>
+	<h2 id="incluir-pasta-de-imagens-no-projeto">Incluir pasta de imagens no projeto</h2>
+	<ul>
+		<li>dentro da pasta <code>src</code>
+			<ul>
+				<li>criar a pasta <code>assets</code></li>
+			</ul>
+		</li>
+		<li>dentro de <code>assets</code>
+			<ul>
+				<li>criar a pasta <code>img</code></li>
+			</ul>
+		</li>
+	</ul>
+	<br>
+	<pre><code class="language-bash">&gt; src
+	&gt; assets
+		&gt; img
+</code></pre>
+	<br>
+	<blockquote>
+		<p>A pasta <code>assets</code> guardará todos os recursos adicionais do projeto, como imagens, fontes e outros.</p>
+	</blockquote>
+	<br>
+	<h2 id="criar-logotipo">Criar Logotipo</h2>
+	<ul>
+		<li>site &quot;Font Meme&quot; ( <a
+				href="https://fontmeme.com/pt/fonte-da-netflix/">https://fontmeme.com/pt/fonte-da-netflix/</a> )</li>
+		<li>gerar imagem com:
+			<ul>
+				<li>tamanho 120px</li>
+				<li>cor #2A7AE4</li>
+			</ul>
+		</li>
+		<li>exportar e salvar imagem na pasta de imagens
+			<ul>
+				<li><code>src/assets/img/devflix-logo.png</code></li>
+			</ul>
+		</li>
+	</ul>
+	<br>
+	<h2 id="importar-imagem-do-logo">Importar imagem do logo</h2>
+	<p><strong>No arquivo <code>Menu/index.js</code></strong></p>
+	<ul>
+		<li>abaixo da linha de importação do <code>Menu.css</code></li>
+		<li>importar a propriedade <code>Logo</code> indicando o caminho do arquivo</li>
+		<li>na tag <code>img</code> definir os valores dos atributos:
+			<ul>
+				<li><code>className</code> com o seletor <code>logo</code></li>
+				<li><code>src</code> com a propriedade <code>Logo</code></li>
+				<li><code>alt</code> com o texto explicativo da imagem</li>
+			</ul>
+		</li>
+	</ul>
+	<br>
+	<pre><code class="language-js"><span class="hljs-keyword">import</span>  <span class="hljs-title class_">Logo</span>  <span class="hljs-keyword">from</span>  <span class="hljs-string">&#x27;../../assets/img/devflix-logo.png&#x27;</span>;
+...
+<span class="hljs-keyword">return</span> (
+	<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>  <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;menu&quot;</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">a</span>  <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/&quot;</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">img</span>  <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;logo&quot;</span>  <span class="hljs-attr">src</span>=<span class="hljs-string">{Logo}</span>  <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Logotipo Devflix&quot;</span>  /&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">a</span>  <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;botao-menu&quot;</span>  <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/&quot;</span>&gt;</span>Novo vídeo<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></span>
+);
+</code></pre>
+	<br>
+	<h2 id="definir-estilo-do-componente-menu">Definir estilo do componente <code>Menu</code></h2>
+	<p><strong>No arquivo <code>Menu.css</code></strong></p>
+	<ul>
+		<li>incluir os seletores do compomente com seus atributos e valores
+			<ul>
+				<li><code>body</code></li>
+				<li><code>menu</code></li>
+				<li><code>logo</code></li>
+				<li><code>button-menu</code></li>
+			</ul>
+		</li>
+		<li>incluir os valores responsivos</li>
+	</ul>
+	<br>
+	<p><strong>Código CSS completo do componente <code>Menu</code></strong></p>
+	<pre><code class="language-css"><span class="hljs-selector-tag">body</span> {
+	<span class="hljs-attr">--bodyPaddingTop</span>: <span class="hljs-number">94px</span>;
+	<span class="hljs-attribute">padding-top</span>: <span class="hljs-built_in">var</span>(--bodyPaddingTop);
+}
+
+<span class="hljs-selector-class">.menu</span> {
+	<span class="hljs-attribute">display</span>: flex;
+	<span class="hljs-attribute">justify-content</span>: space-between;
+	<span class="hljs-attribute">align-items</span>: center;
+
+	<span class="hljs-attribute">background</span>: <span class="hljs-built_in">var</span>(--black);
+	<span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">2px</span>  solid  <span class="hljs-built_in">var</span>(--primary);
+
+	<span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+	<span class="hljs-attribute">height</span>: <span class="hljs-number">94px</span>;
+	<span class="hljs-attribute">z-index</span>: <span class="hljs-number">100</span>;
+
+	<span class="hljs-attribute">position</span>: fixed;
+	<span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+	<span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
+	<span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
+
+	<span class="hljs-attribute">padding-left</span>: <span class="hljs-number">5%</span>;
+	<span class="hljs-attribute">padding-right</span>: <span class="hljs-number">5%</span>;
+}
+
+<span class="hljs-selector-class">.logo</span> {
+	<span class="hljs-attribute">max-width</span>: <span class="hljs-number">168px</span>;
+}
+
+<span class="hljs-selector-class">.button-menu</span> {
+	<span class="hljs-attribute">display</span>: inline-block;
+
+	<span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span>  solid  <span class="hljs-built_in">var</span>(--white);
+	<span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+	<span class="hljs-attribute">box-sizing</span>: border-box;
+
+	<span class="hljs-attribute">font-style</span>: normal;
+	<span class="hljs-attribute">font-weight</span>: bold;
+	<span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+	<span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--white);
+	<span class="hljs-attribute">outline</span>: none;
+	<span class="hljs-attribute">text-decoration</span>: none;
+
+	<span class="hljs-attribute">cursor</span>: pointer;
+
+	<span class="hljs-attribute">padding</span>: <span class="hljs-number">16px</span>  <span class="hljs-number">24px</span>;
+
+	<span class="hljs-attribute">transition</span>: opacity  .<span class="hljs-number">3s</span>;
+}
+
+<span class="hljs-selector-class">.button-menu</span><span class="hljs-selector-pseudo">:hover</span>,
+<span class="hljs-selector-class">.button-menu</span><span class="hljs-selector-pseudo">:focus</span> {
+	<span class="hljs-attribute">opacity</span>: .<span class="hljs-number">5</span>;
+}
+
+<span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">800px</span>) {
+
+	<span class="hljs-selector-tag">body</span> {
+		<span class="hljs-attr">--bodyPaddingTop</span>: <span class="hljs-number">40px</span>;
+		<span class="hljs-attribute">padding-top</span>: <span class="hljs-built_in">var</span>(--bodyPaddingTop);
+	}
+
+	<span class="hljs-selector-class">.menu</span> {
+		<span class="hljs-attribute">height</span>: <span class="hljs-number">40px</span>;
+		<span class="hljs-attribute">justify-content</span>: center;
+	}
+
+	<span class="hljs-selector-class">.logo</span> {
+		<span class="hljs-attribute">max-width</span>: <span class="hljs-number">105px</span>;
+	}
+
+	<span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.button-menu</span> {
+		<span class="hljs-attribute">position</span>: fixed;
+		<span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
+		<span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
+		<span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;
+
+		<span class="hljs-attribute">background</span>: <span class="hljs-built_in">var</span>(--primary);
+		<span class="hljs-attribute">border-radius</span>: <span class="hljs-number">0</span>;
+		<span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
+
+		<span class="hljs-attribute">text-align</span>: center;
+	}
+
+}
+</code></pre>
+	<br>
+	<h2 id="incluir-componente-na-aplicação">Incluir componente na aplicação</h2>
+	<p><strong>No arquivo <code>src/App.js</code></strong></p>
+	<ul>
+		<li>dentro do <code>return</code> da função &quot;App&quot;
+			<ul>
+				<li>incluir a tag <code>&lt;Menu /&gt;</code></li>
+			</ul>
+		</li>
+	</ul>
+	<br>
+	<blockquote>
+		<p>O VSCode faz a importação automática do componente ao declarar a tag <code>Menu</code>. Caso esta ação automática
+			não ocorra, a importação deverá ser feita manualmente, digitando no início do arquivo, abaixo da linha de
+			importação do <code>React</code>:</p>
+		<pre><code class="language-js"> <span class="hljs-keyword">import</span>  <span class="hljs-title class_">Menu</span>  <span class="hljs-keyword">from</span>  <span class="hljs-string">&#x27;./components/Menu&#x27;</span>;
+</code></pre>
+	</blockquote>
+	<br>
+	<p><strong>Código do arquivo <code>src/App.js</code></strong></p>
+	<pre><code class="language-js"><span class="hljs-keyword">import</span>  <span class="hljs-title class_">React</span>  <span class="hljs-keyword">from</span>  <span class="hljs-string">&#x27;react&#x27;</span>;
+<span class="hljs-keyword">import</span>  <span class="hljs-title class_">Menu</span>  <span class="hljs-keyword">from</span>  <span class="hljs-string">&#x27;./components/Menu&#x27;</span>;
+
+<span class="hljs-keyword">function</span>  <span class="hljs-title function_">App</span>(<span class="hljs-params"></span>) {
+	<span class="hljs-keyword">return</span> (
+		<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">Menu</span>  /&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello, World!!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+	);
+}
+
+<span class="hljs-keyword">export</span>  <span class="hljs-keyword">default</span>  <span class="hljs-title class_">App</span>;
+</code></pre>
+	<br>
+	<h3 id="estrutura-atualizada-do-projeto">Estrutura atualizada do projeto</h3>
+	<pre><code class="language-bash">&gt; reflix
+	&gt; node_modules
+	&gt; public
+		- index.html
+		- manifest.json
+		- robots.txt
+	&gt; src
+		&gt; assets
+			 &gt; img
+				- devflix-logo.png
+		&gt; components
+			&gt; Menu
+				- index.js
+				- Menu.css
+		- App.js
+		- index.css
+		- index.js
+	- .gitignore
+	- package.json
+	- README.md
+</code></pre>
+	<br>
+	<h2 id="registrar-etapa-do-desenvolvimento-do-projeto">Registrar etapa do desenvolvimento do projeto</h2>
+	<ul>
+		<li>fazer commit</li>
+		<li>enviar para repositório remoto (GitHub)</li>
+	</ul>
+	<hr>
+	<br>
+	<blockquote>
+		<p>( --&gt; fim etapa 02 &lt;-- )</p>
+	</blockquote>
+	<br>
+
+
+</body>
+
+</html>
