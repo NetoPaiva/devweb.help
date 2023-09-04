@@ -1,57 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
+
 	<meta charset="UTF-8">
-	<title>Etapa 02 - Criar Componentes | Projeto Reflix</title>
-	<style>
-		/* From extension vscode.github */
-		/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		.vscode-dark img[src$=\#gh-light-mode-only],
-		.vscode-light img[src$=\#gh-dark-mode-only] {
-			display: none;
-		}
-	</style>
+	<title>02 - Criar componente Menu | Projeto Reflix</title>
 
-	<link rel="stylesheet"
-		href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
-	<link rel="stylesheet"
-		href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-	<style>
-		body {
-			font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
-			font-size: 14px;
-			line-height: 1.6;
-		}
-	</style>
-	<style>
-		.task-list-item {
-			list-style-type: none;
-		}
+	<link rel="stylesheet" href="./markdown.css">
+	<link rel="stylesheet" href="./highlight.css">
 
-		.task-list-item-checkbox {
-			margin-left: -20px;
-			vertical-align: middle;
-			pointer-events: none;
-		}
-	</style>
+	<!-- 	
+
+		From extension vscode.github
+		Copyright (c) Microsoft Corporation. All rights reserved.
+		Licensed under the MIT License. 
+		See License.txt in the project root for license information.	
+
+	-->
 
 </head>
 
 <body class="vscode-body vscode-light">
+
 	<h3 id="projeto-reflix">Projeto Reflix</h3>
+
 	<p><mark><em>Anotações do desenvolvimento do projeto com base no Aluraflix</em></mark></p>
+
 	<br>
+
 	<p>Link repositório <strong>reflix</strong>: <a
 			href="https://github.com/NetoPaiva/reflix/">https://github.com/NetoPaiva/reflix/</a></p>
+
 	<br>
+
 	<h1 id="etapa-02---criar-componentes">Etapa 02 - Criar componentes</h1>
+
 	<h2 id="estrutura-básica-do-componente-no-projeto">Estrutura básica do componente no projeto</h2>
+
 	<p><strong>Criar pastas e arquivos referentes aos componentes</strong></p>
+
 	<ul>
 		<li>dentro da pasta <code>src</code>
 			<ul>
@@ -59,7 +48,6 @@
 			</ul>
 		</li>
 	</ul>
-	<!-- <br> -->
 	<ul>
 		<li>dentro da pasta <code>components</code>
 			<ul>
@@ -67,7 +55,6 @@
 			</ul>
 		</li>
 	</ul>
-	<!-- <br> -->
 	<ul>
 		<li>dentro da pasta <code>Menu</code> criar os arquivos
 			<ul>
@@ -76,22 +63,28 @@
 			</ul>
 		</li>
 	</ul>
-	<br>
-	<p><strong>Estrutura de pastas do componente</strong></p>
+
 	<pre><code class="language-bash">&gt; src
 	&gt; components
 		&gt; Menu
 			- index.js
 			- Menu.css
 </code></pre>
+
 	<br>
+
 	<blockquote>
 		<p>Se for desenvolver o projeto com <code>styled-components</code> utilizar estrutura específica, apenas com o
-			<code>index.js</code> na pasta do componente, que conterá tanto o HTML quanto o CSS.</p>
+			<code>index.js</code> na pasta do componente, que conterá tanto o HTML quanto o CSS.
+		</p>
 	</blockquote>
+
 	<br>
+
 	<h2 id="estrutura-básica-do-indexjs-do-componente">Estrutura básica do <code>index.js</code> do componente</h2>
+
 	<p><strong>No arquivo <code>Menu/index.js</code></strong></p>
+
 	<ul>
 		<li>importar a biblioteca <code>React</code></li>
 		<li>importar o arquivo CSS do componente</li>
@@ -99,6 +92,9 @@
 		<li>inlcuir o <code>return</code> da função</li>
 		<li>exportar a função</li>
 	</ul>
+
+
+
 	<pre><code class="language-javascript"><span class="hljs-keyword">import</span>  <span class="hljs-title class_">React</span>  <span class="hljs-keyword">from</span>  <span class="hljs-string">&quot;react&quot;</span>;
 <span class="hljs-keyword">import</span>  <span class="hljs-string">&#x27;./Menu.css&#x27;</span>;
 
@@ -107,16 +103,23 @@
 	
 	);
 }
+
 <span class="hljs-keyword">export</span>  <span class="hljs-keyword">default</span>  <span class="hljs-title class_">Menu</span>;
 </code></pre>
+
 	<br>
+
 	<blockquote>
 		<p>Essa é a estrutura básica de componentes React. Toda a definição <code>HTML</code> do componente será declarada
 			dentro do <code>return</code> da função.</p>
 	</blockquote>
+
 	<br>
+
 	<h2 id="estrutura-html-do-componente-menu">Estrutura <code>HTML</code> do componente <code>Menu</code></h2>
+
 	<p><strong>No arquivo <code>Menu/index.js</code></strong></p>
+
 	<ul>
 		<li>dentro do <code>return</code> da função <code>Menu</code>
 			<ul>
@@ -124,7 +127,6 @@
 			</ul>
 		</li>
 	</ul>
-	<!-- <br> -->
 	<ul>
 		<li>a tag <code>nav</code> conterá duas tags de link <code>a</code>
 			<ul>
@@ -144,7 +146,7 @@
 			</ul>
 		</li>
 	</ul>
-	<!-- <br> -->
+
 	<pre><code class="language-js"><span class="hljs-keyword">return</span> (
 	<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>  <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;menu&quot;</span>&gt;</span>
 		<span class="hljs-tag">&lt;<span class="hljs-name">a</span>  <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/&quot;</span>&gt;</span>
@@ -154,31 +156,39 @@
 	<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></span>
 );
 </code></pre>
+
 	<br>
-	<h2 id="incluir-pasta-de-imagens-no-projeto">Incluir pasta de imagens no projeto</h2>
+
+	<h2 id="incluir-pasta-de-imagens-no-projeto">Incluir pasta de imagens do projeto</h2>
+
 	<ul>
 		<li>dentro da pasta <code>src</code>
 			<ul>
 				<li>criar a pasta <code>assets</code></li>
 			</ul>
 		</li>
-		<li>dentro de <code>assets</code>
+		<li>dentro da pasta <code>assets</code>
 			<ul>
 				<li>criar a pasta <code>img</code></li>
 			</ul>
 		</li>
 	</ul>
-	<br>
+
 	<pre><code class="language-bash">&gt; src
 	&gt; assets
 		&gt; img
 </code></pre>
+
 	<br>
+
 	<blockquote>
 		<p>A pasta <code>assets</code> guardará todos os recursos adicionais do projeto, como imagens, fontes e outros.</p>
 	</blockquote>
+
 	<br>
+
 	<h2 id="criar-logotipo">Criar Logotipo</h2>
+
 	<ul>
 		<li>site &quot;Font Meme&quot; ( <a
 				href="https://fontmeme.com/pt/fonte-da-netflix/">https://fontmeme.com/pt/fonte-da-netflix/</a> )</li>
@@ -194,9 +204,13 @@
 			</ul>
 		</li>
 	</ul>
+
 	<br>
+
 	<h2 id="importar-imagem-do-logo">Importar imagem do logo</h2>
+
 	<p><strong>No arquivo <code>Menu/index.js</code></strong></p>
+
 	<ul>
 		<li>abaixo da linha de importação do <code>Menu.css</code></li>
 		<li>importar a propriedade <code>Logo</code> indicando o caminho do arquivo</li>
@@ -208,7 +222,7 @@
 			</ul>
 		</li>
 	</ul>
-	<br>
+
 	<pre><code class="language-js"><span class="hljs-keyword">import</span>  <span class="hljs-title class_">Logo</span>  <span class="hljs-keyword">from</span>  <span class="hljs-string">&#x27;../../assets/img/devflix-logo.png&#x27;</span>;
 ...
 <span class="hljs-keyword">return</span> (
@@ -220,9 +234,13 @@
 	<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></span>
 );
 </code></pre>
+
 	<br>
+
 	<h2 id="definir-estilo-do-componente-menu">Definir estilo do componente <code>Menu</code></h2>
+
 	<p><strong>No arquivo <code>Menu.css</code></strong></p>
+
 	<ul>
 		<li>incluir os seletores do compomente com seus atributos e valores
 			<ul>
@@ -234,8 +252,11 @@
 		</li>
 		<li>incluir os valores responsivos</li>
 	</ul>
+
 	<br>
+
 	<p><strong>Código CSS completo do componente <code>Menu</code></strong></p>
+
 	<pre><code class="language-css"><span class="hljs-selector-tag">body</span> {
 	<span class="hljs-attr">--bodyPaddingTop</span>: <span class="hljs-number">94px</span>;
 	<span class="hljs-attribute">padding-top</span>: <span class="hljs-built_in">var</span>(--bodyPaddingTop);
@@ -323,9 +344,13 @@
 
 }
 </code></pre>
+
 	<br>
+
 	<h2 id="incluir-componente-na-aplicação">Incluir componente na aplicação</h2>
+
 	<p><strong>No arquivo <code>src/App.js</code></strong></p>
+
 	<ul>
 		<li>dentro do <code>return</code> da função &quot;App&quot;
 			<ul>
@@ -333,16 +358,23 @@
 			</ul>
 		</li>
 	</ul>
-	<br>
+
+
 	<blockquote>
+
 		<p>O VSCode faz a importação automática do componente ao declarar a tag <code>Menu</code>. Caso esta ação automática
 			não ocorra, a importação deverá ser feita manualmente, digitando no início do arquivo, abaixo da linha de
 			importação do <code>React</code>:</p>
+
 		<pre><code class="language-js"> <span class="hljs-keyword">import</span>  <span class="hljs-title class_">Menu</span>  <span class="hljs-keyword">from</span>  <span class="hljs-string">&#x27;./components/Menu&#x27;</span>;
 </code></pre>
+
 	</blockquote>
+
 	<br>
+
 	<p><strong>Código do arquivo <code>src/App.js</code></strong></p>
+
 	<pre><code class="language-js"><span class="hljs-keyword">import</span>  <span class="hljs-title class_">React</span>  <span class="hljs-keyword">from</span>  <span class="hljs-string">&#x27;react&#x27;</span>;
 <span class="hljs-keyword">import</span>  <span class="hljs-title class_">Menu</span>  <span class="hljs-keyword">from</span>  <span class="hljs-string">&#x27;./components/Menu&#x27;</span>;
 
@@ -357,8 +389,11 @@
 
 <span class="hljs-keyword">export</span>  <span class="hljs-keyword">default</span>  <span class="hljs-title class_">App</span>;
 </code></pre>
+
 	<br>
-	<h3 id="estrutura-atualizada-do-projeto">Estrutura atualizada do projeto</h3>
+
+	<h2 id="estrutura-atualizada-do-projeto">Estrutura atualizada do projeto</h2>
+
 	<pre><code class="language-bash">&gt; reflix
 	&gt; node_modules
 	&gt; public
@@ -367,7 +402,7 @@
 		- robots.txt
 	&gt; src
 		&gt; assets
-			 &gt; img
+			&gt; img
 				- devflix-logo.png
 		&gt; components
 			&gt; Menu
@@ -380,19 +415,24 @@
 	- package.json
 	- README.md
 </code></pre>
+
 	<br>
-	<h2 id="registrar-etapa-do-desenvolvimento-do-projeto">Registrar etapa do desenvolvimento do projeto</h2>
+
+	<h2 id="registrar-etapa-do-desenvolvimento-do-projeto">Registrar etapa do projeto</h2>
+
 	<ul>
 		<li>fazer commit</li>
 		<li>enviar para repositório remoto (GitHub)</li>
 	</ul>
-	<hr>
+
+
 	<br>
+
 	<blockquote>
 		<p>( --&gt; fim etapa 02 &lt;-- )</p>
 	</blockquote>
-	<br>
 
+	<br>
 
 </body>
 

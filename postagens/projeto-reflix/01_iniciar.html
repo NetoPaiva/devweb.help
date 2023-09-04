@@ -1,109 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
+
 	<meta charset="UTF-8">
-	<title>Etapa 01 - Iniciar e Refatorar | Projeto Reflix</title>
-	<style>
-		/* From extension vscode.github */
-		/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		.vscode-dark img[src$=\#gh-light-mode-only],
-		.vscode-light img[src$=\#gh-dark-mode-only] {
-			display: none;
-		}
-	</style>
+	<title>01 - Iniciar e refatorar | Projeto Reflix</title>
 
-	<link rel="stylesheet"
-		href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
-	<link rel="stylesheet"
-		href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-	<style>
-		body {
-			font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
-			font-size: 14px;
-			line-height: 1.6;
-		}
-	</style>
-	<style>
-		.task-list-item {
-			list-style-type: none;
-		}
 
-		.task-list-item-checkbox {
-			margin-left: -20px;
-			vertical-align: middle;
-			pointer-events: none;
-		}
-	</style>
+	<link rel="stylesheet" href="./markdown.css">
+	<link rel="stylesheet" href="./highlight.css">
+
+	<!-- 	
+
+		From extension vscode.github
+		Copyright (c) Microsoft Corporation. All rights reserved.
+		Licensed under the MIT License. 
+		See License.txt in the project root for license information.	
+
+	-->
 
 </head>
 
 <body class="vscode-body vscode-light">
+
 	<h3 id="projeto-reflix">Projeto Reflix</h3>
+
 	<p><mark><em>Anotações do desenvolvimento do projeto com base no Aluraflix</em></mark></p>
 	<br>
+
 	<p>Link repositório <strong>reflix</strong>: <a
 			href="https://github.com/NetoPaiva/reflix/">https://github.com/NetoPaiva/reflix/</a></p>
 	<br>
+
 	<h1 id="etapa-01---iniciar-e-refatorar-projeto-básico">Etapa 01 - Iniciar e refatorar projeto básico</h1>
+
 	<h3 id="documentação-react">Documentação React</h3>
+
 	<ul>
 		<li><code>reactjs.org</code> (antigo)</li>
 		<li><code>react.dev</code> (atual)</li>
 	</ul>
+
 	<br>
+
 	<h2 id="ambiente-de-desenvolvimento">Ambiente de desenvolvimento</h2>
+
 	<p><strong>Recursos necessários</strong></p>
+
 	<ul>
 		<li>terminal de comando</li>
 		<li>IDE (VS Code)</li>
 		<li>Node.js</li>
 		<li>Navegador</li>
 	</ul>
+
 	<br>
+
 	<h2 id="iniciar-projeto-create-react-app">Iniciar projeto (create-react-app)</h2>
+
 	<ul>
 		<li>localizar a pasta de projetos no computador</li>
 		<li>abrir a pasta no terminal</li>
 		<li>rodar o comando <code>npx create-react-app nome-do-projeto</code></li>
-		<li>irá criar a pasta com o nome do projeto</li>
-		<li>dentro da pasta criará a estrutura básica de projeto React</li>
 	</ul>
+
 	<blockquote>
+		<p>O comando irá criar a pasta com o nome do projeto e, dentro da pasta, criará a estrutura básica de projeto React
+		</p>
 		<p>Atualmente, existem outras formas de criar um projeto React além do <code>C-R-A</code>, como o <code>Vite</code>
 			demonstrado na Live do Desafio.</p>
 	</blockquote>
+
 	<br>
+
 	<h2 id="manter-controle-de-versão-do-projeto">Manter controle de versão do projeto</h2>
+
 	<blockquote>
 		<p>O projeto básico do React já é criado com o controle de versão. Não precisa rodar os comandos
 			<code>git init</code>, <code>git add</code> e <code>git commit</code>.
 		</p>
 	</blockquote>
+
+	<br>
+
 	<ul>
 		<li>Criar o repositório no GitHub</li>
 		<li>Clonar o repositório no computador</li>
 		<li>Definir o ramo principal (Branch main)</li>
 		<li>Enviar os arquivos (push)</li>
 	</ul>
+
 	<br>
+
 	<h2 id="abrir-o-projeto-no-vs-code">Abrir o projeto no VS Code</h2>
+
 	<ul>
 		<li>comandos no terminal</li>
 		<li>entrar na pasta criada (<code>cd nome-projeto</code>)</li>
 		<li>abrir VS Code (<code>code .</code>)</li>
 	</ul>
+
 	<br>
+
 	<h2 id="rodar-o-projeto">Rodar o projeto</h2>
+
 	<ul>
 		<li>Abrir terminal do VS Code</li>
 		<li>digitar comando <code>npm start</code></li>
 		<li>Abrirá o projeto no navegador</li>
 	</ul>
+
 	<blockquote>
 		<p>O comando <code>start</code> trabalha com o recurso &quot;hot reloading&quot;, todas as alteraçõs realizadas no
 			código serão atualizadas no navegador, em tempo real, sem precisar recarregar a página. Por isso, mensagens de
@@ -112,9 +120,13 @@
 		<p>Uma boa prática é cultivar o hábito de ler e compreender as mensagens de erro, são fortes aliadas no
 			desenvolvimento profissional.</p>
 	</blockquote>
+
 	<br>
+
 	<h2 id="limpar-projeto-padrão">Limpar projeto padrão</h2>
+
 	<p><strong>Deletar arquivos da pasta <code>src</code>:</strong></p>
+
 	<ul>
 		<li>App.css</li>
 		<li>App.test.js</li>
@@ -123,16 +135,25 @@
 		<li>setupTests.js</li>
 		<li>package-lock.json</li>
 	</ul>
+
 	<br>
+
 	<p><strong>Refatorar o arquivo <code>src/index.js</code></strong></p>
+
 	<ul>
-		<li><strong>deletar:</strong></li>
-		<li>chamada do <code>reportWebVitals()</code> na linha 17</li>
-		<li>cometários das linhas 14, 15 e 16</li>
-		<li>import do <code>reportWebVitals</code> na linha 5</li>
+		<li><strong>deletar:</strong>
+			<ul>
+				<li>chamada do <code>reportWebVitals()</code> na linha 17</li>
+				<li>cometários das linhas 14, 15 e 16</li>
+				<li>import do <code>reportWebVitals</code> na linha 5</li>
+			</ul>
+		</li>
 	</ul>
+
 	<br>
+
 	<p><strong>Código final do arquivo <code>src/index.js</code>:</strong></p>
+
 	<pre><code class="language-js"><span class="hljs-keyword">import</span>  <span class="hljs-title class_">React</span>  <span class="hljs-keyword">from</span>  <span class="hljs-string">&#x27;react&#x27;</span>;
 <span class="hljs-keyword">import</span>  <span class="hljs-title class_">ReactDOM</span>  <span class="hljs-keyword">from</span>  <span class="hljs-string">&#x27;react-dom/client&#x27;</span>;
 <span class="hljs-keyword">import</span>  <span class="hljs-string">&#x27;./index.css&#x27;</span>;
@@ -145,8 +166,11 @@ root.<span class="hljs-title function_">render</span>(
 	<span class="hljs-tag">&lt;/<span class="hljs-name">React.StrictMode</span>&gt;</span></span>
 );
 </code></pre>
-	<!-- <br> -->
+
+	<br>
+
 	<p><strong>Refatorar o arquivo <code>src/App.js</code></strong></p>
+
 	<ul>
 		<li><strong>deletar:</strong>
 			<ul>
@@ -155,7 +179,9 @@ root.<span class="hljs-title function_">render</span>(
 			</ul>
 		</li>
 	</ul>
+
 	<br>
+
 	<ul>
 		<li><strong>incluir:</strong>
 			<ul>
@@ -165,8 +191,11 @@ root.<span class="hljs-title function_">render</span>(
 			</ul>
 		</li>
 	</ul>
+
 	<br>
+
 	<p><strong>Código refatorado do arquivo <code>src/App.js</code>:</strong></p>
+
 	<pre><code class="language-js"><span class="hljs-keyword">import</span>  <span class="hljs-string">&#x27;./App.css&#x27;</span>;
 
 <span class="hljs-keyword">function</span>  <span class="hljs-title function_">App</span>(<span class="hljs-params"></span>) {
@@ -179,8 +208,11 @@ root.<span class="hljs-title function_">render</span>(
 
 <span class="hljs-keyword">export</span>  <span class="hljs-keyword">default</span>  <span class="hljs-title class_">App</span>;
 </code></pre>
+
 	<br>
+
 	<p><strong>Refatorar o arquivo <code>public/index.html</code></strong></p>
+
 	<ul>
 		<li>na tag <code>html</code>
 			<ul>
@@ -188,9 +220,12 @@ root.<span class="hljs-title function_">render</span>(
 			</ul>
 		</li>
 	</ul>
+
 	<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>  <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;pt-BR&quot;</span>&gt;</span>
 </code></pre>
+
 	<br>
+
 	<ul>
 		<li>na tag <code>head</code>
 			<ul>
@@ -200,6 +235,7 @@ root.<span class="hljs-title function_">render</span>(
 			</ul>
 		</li>
 	</ul>
+
 	<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span>  <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;icon&quot;</span>  <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;img/favicon.ico&quot;</span>  /&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Reflix | Projeto React<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
 
@@ -208,23 +244,33 @@ root.<span class="hljs-title function_">render</span>(
 <span class="hljs-tag">&lt;<span class="hljs-name">link</span>  <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;preconnect&quot;</span>  <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://fonts.gstatic.com&quot;</span>  <span class="hljs-attr">crossorigin</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">link</span>  <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap&quot;</span>  <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>&gt;</span>
 </code></pre>
+
 	<br>
+
 	<p><strong>Deletar os arquivos da pasta <code>public</code></strong></p>
+
 	<ul>
 		<li>logo192.png</li>
 		<li>logo512.png</li>
 	</ul>
+
 	<br>
+
 	<p><strong>Substituir o arquivo da pasta <code>public</code></strong></p>
+
 	<ul>
 		<li>favicon.ico</li>
 	</ul>
+
 	<blockquote>
 		<p>Substituir por um ícone do projeto, caso não tenha um ícone próprio é possível geral em plataformas online, como
 			a <code>favicon-generator.org</code>, ou manter o símbolo do React ou deixar sem ícone.</p>
 	</blockquote>
+
 	<br>
+
 	<h3 id="estrutura-limpa-do-projeto">Estrutura limpa do projeto</h3>
+
 	<pre><code class="language-bash">&gt; reflix
 	&gt; node_modules
 	&gt; public
@@ -239,8 +285,13 @@ root.<span class="hljs-title function_">render</span>(
 	- package.json
 	- README.md
 </code></pre>
+
+	<br>
+
 	<h2 id="reset-css">Reset CSS</h2>
+
 	<p><strong>Refatorar o arquivo <code>src/index.css</code></strong></p>
+
 	<ul>
 		<li>remover todo o código existente no arquivo</li>
 		<li>incluir o código de reset com os seletores:
@@ -252,8 +303,11 @@ root.<span class="hljs-title function_">render</span>(
 			</ul>
 		</li>
 	</ul>
+
 	<br>
-	<p><strong>Codigo <em>reset</em> do projeto - arquivo <code>src/index.css</code></strong></p>
+
+	<p><strong>Codigo <em>Reset</em> do projeto - arquivo <code>src/index.css</code></strong></p>
+
 	<pre><code class="language-css">* {
 	<span class="hljs-attribute">box-sizing</span>: border-box;
 	<span class="hljs-attribute">font-family</span>: <span class="hljs-string">&#x27;Roboto&#x27;</span>, sans-serif;
@@ -286,18 +340,24 @@ root.<span class="hljs-title function_">render</span>(
 	<span class="hljs-attribute">flex-direction</span>: column;
 }
 </code></pre>
-	<h2 id="registrar-primeira-etapa-do-projeto">Registrar primeira etapa do projeto</h2>
+
+	<br>
+
+	<h2 id="registrar-primeira-etapa-do-projeto">Registrar etapa do projeto</h2>
+
 	<ul>
 		<li>fazer commit</li>
 		<li>enviar para repositório remoto (GitHub)</li>
 	</ul>
-	<hr>
+
+
 	<br>
+
 	<blockquote>
 		<p>( --&gt; fim etapa 01 &lt;-- )</p>
 	</blockquote>
-	<br>
 
+	<br>
 
 </body>
 
